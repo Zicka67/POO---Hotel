@@ -3,10 +3,10 @@
 class Hotel
 {
 
-    private $name; //
-    private $room;
-    private $adress; //
-    private $reservation;
+    private string $name; //
+    private array $room;
+    private string $adress; //
+    private array $reservation;
 
     public function __construct($name, $adress)
     {
@@ -67,12 +67,24 @@ class Hotel
     }
 
     // ***** ADDRESERVATION *****
-    
+
     public function addReservation($reservation)
     {
         $this->reservation[] = $reservation;
     }
 
+    // ***** ADDROOM *****
 
+    public function addRoom($newRoom)
+    {
+        $this->room[] = $newRoom;
+    }
     
+    // ***** COUNTROOM *****
+
+    public function countRoom()
+    {
+        return count($this->room);
+    }
+
 }
