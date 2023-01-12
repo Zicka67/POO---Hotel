@@ -87,6 +87,18 @@ return $this;
         $this->reservation [] = $reservation;
     }
 
+    // ***** COUNTRESERVED *****
+
+    public function countReserved()
+    {
+        $i = 0;
+        foreach ($this->reservation as $reservation) {
+                $i++;
+        }
+        return $i;
+    }
+    
+
     // ***** TOSTRING *****
 
     public function __toString()
