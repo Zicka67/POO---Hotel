@@ -6,8 +6,8 @@ class User
 private string $name;
 private string $firstName;
 private string$sexe;
-private int $dtBirth;
-private $reservation;
+private string $dtBirth;
+private array $reservation;
 
 public function __construct($name, $firstName, $sexe, $dtBirth)
 {
@@ -80,7 +80,12 @@ $this->reservation = $reservation;
 return $this;
 }
 
+    // ***** ADDRESERVATION *****
 
+    public function addReservation($reservation)
+    {
+        $this->reservation [] = $reservation;
+    }
 
 
 
