@@ -87,7 +87,12 @@ return $this;
         $this->reservation [] = $reservation;
     }
 
-
+    // ***** TOSTRING *****
+    
+    public function __toString()
+    {
+        return $this->name . $this->firstName . $this->sexe . $this->dtBirth;
+    }
 
 }
 
