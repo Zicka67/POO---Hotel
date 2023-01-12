@@ -88,10 +88,10 @@ return $this;
     }
 
     // ***** TOSTRING *****
-    
+
     public function __toString()
     {
-        return $this->name . $this->firstName . $this->sexe . $this->dtBirth;
+        return $this->name . $this->firstName;
     }
 
 }
