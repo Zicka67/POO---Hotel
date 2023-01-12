@@ -87,4 +87,12 @@ class Hotel
         return count($this->room);
     }
 
+    // ***** TOSTRING *****
+
+    public function __toString()
+    {
+        return $this->name . $this->adress;
+    }
+
+
 }
