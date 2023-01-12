@@ -85,7 +85,12 @@ class Reservation
         return $this;
     }
 
+    // ***** TOSTRING *****
 
+    public function __toString()
+    {
+        return $this->user . $this->dtStart . $this->dtEnd . $this->room . $this->hotel;
+    }
 
 
    
