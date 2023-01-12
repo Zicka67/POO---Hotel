@@ -6,9 +6,8 @@ class Reservation
     private $dtStart;
     private $dtEnd;
     private $room;
-    private $hotel; //A enlever ? 
 
-    public function __construct($user, $dtStart, $dtEnd, $room, $hotel)
+    public function __construct($user, $dtStart, $dtEnd, $room)
     {
         $this->dtStart = $dtStart;
         $this->dtEnd = $dtEnd;
@@ -19,25 +18,11 @@ class Reservation
         $this->room = $room;
         $this->room->addReservation($this);
         $this->room->statusWifi($this);
-
-        $this->hotel = $hotel;
-        $this->hotel->addReservation($this);
+        $this->room->getHotel()->addReservation($this);
     }
 
     // ******** GETTER / SETTER *********
-
-    public function getHotel()
-    {
-        return $this->hotel;
-    }
-
-    public function setHotel($hotel)
-    {
-        $this->hotel = $hotel;
-
-        return $this;
-    }
-
+    
     public function getRoom()
     {
         return $this->room;
@@ -90,7 +75,7 @@ class Reservation
 
     public function __toString()
     {
-        return $this->user . $this->dtStart . $this->dtEnd . $this->room . $this->hotel;
+        return $this->user . $this->dtStart . $this->dtEnd . $this->room;
     }
 
 
