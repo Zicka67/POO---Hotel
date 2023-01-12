@@ -22,7 +22,7 @@ class Reservation
     }
 
     // ******** GETTER / SETTER *********
-    
+
     public function getRoom()
     {
         return $this->room;
@@ -73,10 +73,10 @@ class Reservation
 
     // ***** TOSTRING *****
 
-    public function __toString()
-    {
-        return $this->user . $this->dtStart . $this->dtEnd . $this->room;
-    }
+    // public function __toString()
+    // {
+    //     return $this->user . $this->dtStart . $this->dtEnd . $this->room;
+    // }
 
 
    
