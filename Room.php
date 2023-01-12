@@ -18,7 +18,7 @@ class Room
         $this->nbBed = $nbBed;
 
         $this->hotel = $hotel;
-        $this->hotel->addRoom($this); // A ne plus oublier ! (rajouter a chaque fois les add"" dans la class)
+        $this->hotel->addRoom($this); // A ne plus oublier ! (plus d'infos pour mieux comprendre)
 
         $this->reservation = [];
         $this->wifi = false;
