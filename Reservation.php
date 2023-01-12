@@ -18,6 +18,7 @@ class Reservation
 
         $this->room = $room;
         $this->room->addReservation($this);
+        $this->room->statusWifi($this);
 
         $this->hotel = $hotel;
         $this->hotel->addReservation($this);
