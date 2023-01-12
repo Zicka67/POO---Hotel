@@ -2,20 +2,25 @@
 
 class Reservation
 {
-
+    private $user;
     private $dtStart;
     private $dtEnd;
-    private $user;
     private $room;
     private $hotel; //A enlever ? 
 
-    public function __construct($dtStart, $dtEnd, $user, $room, $hotel)
+    public function __construct($user, $dtStart, $dtEnd, $room, $hotel)
     {
         $this->dtStart = $dtStart;
         $this->dtEnd = $dtEnd;
+
         $this->user = $user;
+        $this->user->addReservation($this);
+
         $this->room = $room;
+        $this->room->addReservation($this);
+
         $this->hotel = $hotel;
+        $this->hotel->addReservation($this);
     }
 
     // ******** GETTER / SETTER *********
@@ -85,6 +90,3 @@ class Reservation
 
    
 }
-
-
-?>
