@@ -9,6 +9,7 @@ class Room
     private $hotel;
     private $wifi; // Boolean ?
     private $disponibility; // Boolean ?
+    private array $reservation;
 
     public function __construct($name, $price, $nbBed, $hotel)
     {
@@ -16,6 +17,7 @@ class Room
         $this->price = $price;
         $this->nbBed = $nbBed;
         $this->hotel = $hotel;
+        $this->reservation = [];
     }
 
     // ******** GETTER / SETTER *********
@@ -69,6 +71,19 @@ class Room
         return $this;
     }
 
+    // ***** ADDRESERVATION *****
+
+    public function addReservation($reservation)
+    {
+        $this->reservation[] = $reservation;
+    }
+
+    // ***** TOSTRING *****
+
+    public function __toString()
+    {
+        return $this->name . $this->price . $this->nbBed . $this->hotel;
+    }
 
 }
 
