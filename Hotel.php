@@ -3,9 +3,9 @@
 class Hotel
 {
 
-    private string $name; //
+    private string $name; 
     private array $room;
-    private string $adress; //
+    private string $adress; 
     private array $reservation;
 
     public function __construct($name, $adress)
@@ -79,6 +79,18 @@ class Hotel
     {
         $this->room[] = $newRoom;
     }
+
+    
+        public function countReservedRooms()
+    {
+        $i = 0;
+        foreach ($this->room as $room) {
+            if ($room->getDisponibility() == false) {
+                $i++;
+            }
+        }
+        return $i;
+    }
     
     // ***** COUNTROOM *****
 
@@ -87,12 +99,37 @@ class Hotel
         return count($this->room);
     }
 
+    // ***** COUNTRESERVEDROOM *****
+
+    public function countReservedRoom()
+    {
+
+    }
+
     // ***** TOSTRING *****
 
     public function __toString()
     {
         return $this->name . $this->adress;
     }
+
+
+
+
+
+
+
+
+        // public function getRoom()
+    // {
+    //     $result =  "<br>" . $this . " fait parti de l'hotel Hilton : <br>";// la variable $result contient  " le joueur " . $this (l'objet courant) etc..
+    //     foreach ($this->room as $room) // On parcours tous les elements (ici $club) de l'objet courant (ici le tab clubs)
+    //     {
+    //         $result .= "La chambre " . $room . "<br>"; // .= (concaténer) pour chaque element ($club) du tab, on l'ajoute a la var $result
+    //     }
+    //     return $result; 
+    // }
+
 
 
 }
