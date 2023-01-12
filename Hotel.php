@@ -11,9 +11,10 @@ class Hotel
     public function __construct($name, $adress)
     {
         $this->name = $name;
-        $this->room = []; // tab ?
         $this->adress = $adress;
+
         $this->reservation = [];
+        $this->room = []; 
     }
 
     // ******** GETTER / SETTER *********
@@ -80,8 +81,16 @@ class Hotel
         $this->room[] = $newRoom;
     }
 
-    
-        public function countReservedRooms()
+    // ***** COUNTROOM *****
+
+    public function countRooms()
+    {
+        return count($this->room);
+    }
+
+    // ***** COUNTRESERVEDROOM *****
+
+        public function countReserveRooms()
     {
         $i = 0;
         foreach ($this->room as $room) {
@@ -91,44 +100,26 @@ class Hotel
         }
         return $i;
     }
-    
-    // ***** COUNTROOM *****
 
-    public function countRoom()
+    // ***** GETHOTELINFO *****
+    public function getHotelInfos()
     {
-        return count($this->room);
+        $roomDispo = $this->countRooms() - $this->countReserveRooms();
+
+        echo $this->getName() . ": " . "<br>" . $this->getAdress() . "<br>" . "
+            Nb de chambres : " . $this->countRooms() . "<br>" . " Nb de chambres dispo : " . $this->countReserveRooms()
+            . "<br>" . "Nb de chambres reservées : " . $roomDispo;
     }
 
-    // ***** COUNTRESERVEDROOM *****
+     // ***** TOSTRING *****
 
-    public function countReservedRoom()
-    {
-
-    }
-
-    // ***** TOSTRING *****
-
-    public function __toString()
-    {
-        return $this->name . $this->adress;
-    }
+     public function __toString()
+     {
+         return $this->name . $this->adress;
+     }
 
 
 
-
-
-
-
-
-        // public function getRoom()
-    // {
-    //     $result =  "<br>" . $this . " fait parti de l'hotel Hilton : <br>";// la variable $result contient  " le joueur " . $this (l'objet courant) etc..
-    //     foreach ($this->room as $room) // On parcours tous les elements (ici $club) de l'objet courant (ici le tab clubs)
-    //     {
-    //         $result .= "La chambre " . $room . "<br>"; // .= (concaténer) pour chaque element ($club) du tab, on l'ajoute a la var $result
-    //     }
-    //     return $result; 
-    // }
 
 
 
