@@ -106,9 +106,14 @@ class Hotel
     {
         $roomDispo = $this->countRooms() - $this->countReserveRooms();
 
-        echo $this->getName() . ": " . "<br>" . $this->getAdress() . "<br>" . "
+        echo "Réservation de l'hotel " . $this->getName() . "<br>" . $roomDispo . " réservations" .  ": " . "<br>" . $this->getAdress() . "<br>" . "
             Nb de chambres : " . $this->countRooms() . "<br>" . " Nb de chambres dispo : " . $this->countReserveRooms()
             . "<br>" . "Nb de chambres reservées : " . $roomDispo;
+    }
+
+    public function getHotelReservation()
+    {
+        
     }
 
      // ***** TOSTRING *****
