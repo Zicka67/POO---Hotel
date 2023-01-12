@@ -78,12 +78,21 @@ class Room
         $this->reservation[] = $reservation;
     }
 
+    public function statusWifi()
+    {
+        if($this->disponibility == true)
+            $this->disponibility = false;
+        else {
+            $this->disponibility = true;
+        }
+    }
+
     // ***** TOSTRING *****
 
-    public function __toString()
-    {
-        return $this->name . $this->price . $this->nbBed . $this->hotel;
-    }
+    // public function __toString()
+    // {
+    //     return $this->name . $this->price . $this->nbBed . $this->hotel;
+    // }
 
 }
 
