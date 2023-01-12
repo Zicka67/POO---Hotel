@@ -65,4 +65,14 @@ class Hotel
 
         return $this;
     }
+
+    // ***** ADDRESERVATION *****
+    
+    public function addReservation($reservation)
+    {
+        $this->reservation[] = $reservation;
+    }
+
+
+    
 }
