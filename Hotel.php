@@ -6,14 +6,14 @@ class Hotel
     private string $name; 
     private array $room;
     private string $adress; 
-    private array $reservation;
+    private array $reservations;
     
     public function __construct($name, $adress)
     {
         $this->name = $name;
         $this->adress = $adress;
         
-        $this->reservation = [];
+        $this->reservations = [];
         $this->room = []; 
     }
     
@@ -55,14 +55,14 @@ class Hotel
         return $this;
     }
     
-    public function getReservation()
+    public function getReservations()
     {
-        return $this->reservation;
+        return $this->reservations;
     }
     
-    public function setReservation($reservation)
+    public function setReservations($reservation)
     {
-        $this->reservation = $reservation;
+        $this->reservations = $reservation;
         
         return $this;
     }
@@ -71,7 +71,7 @@ class Hotel
     
     public function addReservation($reservation)
     {
-        $this->reservation[] = $reservation;
+        $this->reservations[] = $reservation;
     }
     
     // ***** ADDROOM *****
@@ -122,9 +122,10 @@ class Hotel
             if ($this->countReserveRooms() > 1) {   
                 echo "S";
             };
-            foreach ($this->reservation as $reservation) 
-            {
-                echo $reservation->getUser() . $reservation->getRoom()->getName() . " - du " . $reservation->getDtStart() . " au " . $reservation->getDtEnd();
+            foreach ($this->reservations as $reservation) {
+                // echo "fzfz";
+                // var_dump($reservation);
+                echo "<br>" . $reservation->getUser()->getName() . " " . $reservation->getUser()->getfirstName()  . " " . $reservation->getRoom()->getName() . " - du " . $reservation->getDtStart() . " au " . $reservation->getDtEnd();
                 if ($reservation->getRoom()->getDisponibility() == false) {
                 }
             }
@@ -133,7 +134,10 @@ class Hotel
         }
     }
     
-    
+    public function roomsResumed()
+    {
+        
+    }
     
     
     
