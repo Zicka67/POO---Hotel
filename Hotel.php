@@ -113,6 +113,8 @@ class Hotel
         "Nombre de chambres dispo : " . $roomDispo;
     }
     
+    // ***** GETHOTELRESERVATION *****
+    
     public function getHotelReservation()
     {
         echo "Réservations de l'hôtel " . $this->getName() . "<br>";
@@ -133,9 +135,6 @@ class Hotel
             echo"Aucune réservation";
         }
     }
-
-    
-    
     
     // ***** TOSTRING *****
     
@@ -143,10 +142,5 @@ class Hotel
     {
         return $this->name . $this->adress;
     }
-    
-    
-    
-    
-    
     
 }
