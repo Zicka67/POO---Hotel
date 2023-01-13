@@ -33,7 +33,6 @@ $reservation2 = new Reservation($user1, "11-03-2021", "11-03-2021", $room3, $hot
 $reservation3 = new Reservation($user1, "01-04-2021", "01-04-2021", $room4, $hotel1);
 
 $room3->setWifi(true);
-var_dump($reservation2);
 
 // var_dump($room3);
 $hotel1->getHotelInfos();

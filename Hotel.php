@@ -115,12 +115,27 @@ class Hotel
     
     public function getHotelReservation()
     {
-        echo "<h2>Réservations de l'hôtel " . $this->getName() . "</h2>" . "<br>";
-        echo $this->countReserveRooms() . " RÉSERVATION";
-        
-        
-        
+        echo "Réservations de l'hôtel " . $this->getName() . "<br>";
+        if ($this->countReserveRooms() > 1) {
+            echo $this->countReserveRooms() . " RÉSERVATION";
+            // rajouter un S au pluriel
+            if ($this->countReserveRooms() > 1) {   
+                echo "S";
+            };
+            foreach ($this->reservation as $reservation) 
+            {
+                echo $reservation->getUser() . $reservation->getRoom()->getName() . " - du " . $reservation->getDtStart() . " au " . $reservation->getDtEnd();
+                if ($reservation->getRoom()->getDisponibility() == false) {
+                }
+            }
+        } else {
+            echo"Aucune réservation";
+        }
     }
+    
+    
+    
+    
     
     // ***** TOSTRING *****
     
