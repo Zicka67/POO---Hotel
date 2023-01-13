@@ -74,4 +74,8 @@ class Reservation
         return $this;
     }
 
+    public function getHotel()
+    {
+        return $this->hotel;
+    }
 }
