@@ -136,11 +136,55 @@ class Hotel
         }
     }
     
-    // ***** TOSTRING *****
-    
-    public function __toString()
+    public function tabResumedRooms()
     {
-        return $this->name . $this->adress;
+        echo "<h2>Status des chambres de " . $this->getName() . "</h2>" .
+        "<table>
+        <thead>
+        <tr>
+        <th>CHAMBRE</th>
+        <th>PRIX</th>
+        <th>WIFI</th>
+        <th>ETAT</th>
+        </tr>
+        </thead><tbody>";
+        foreach($this->room as $room)
+        {
+            echo "<tr>
+            <td>"
+            .$room->getName() .
+            "</td>
+            <td>"
+            .$room->getPrice() .
+            "</td>
+            <td>";
+            if ($room->getWifi() == true)
+            {
+                echo '<a href="img\signal-wifi.png"></a>';// https://www.flaticon.com/fr/icone-gratuite/signal-wifi_1176875?term=wifi&page=1&position=1&origin=tag&related_id=1176875
+                } else 
+                {
+                    echo "";
+                }
+                echo "</td>
+                <td>";
+                if ($room->getDisponibility() == true)
+                {
+                    echo '<p>Disponible</p>';
+                } else 
+                {
+                    echo '<p>Réservée</p>';
+                }
+                echo "</td>
+                </tr>";
+            }
+            echo "</tbody></table>";
+        }
+        
+        // ***** TOSTRING *****
+        
+        public function __toString()
+        {
+            return $this->name . $this->adress;
+        }
+        
     }
-    
-}
