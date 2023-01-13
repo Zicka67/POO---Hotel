@@ -20,6 +20,7 @@ class Room
         $this->hotel = $hotel;
         $this->hotel->addRoom($this); // A ne plus oublier ! (plus d'infos pour mieux comprendre)
 
+        $this->disponibility =true;
         $this->reservation = [];
         $this->wifi = false;
     }
