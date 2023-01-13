@@ -29,8 +29,8 @@ $room19 = new Room("Chambre 19", 300, 2, $hotel1);
 
 
 $reservation1 = new Reservation($user2, "01-01-2021", "01-01-2021", $room17, $room1);
-$reservation2 = new Reservation($user1, "11-03-2021", "11-03-2021", $room3, $room1);
-$reservation3 = new Reservation($user1, "01-04-2021", "01-04-2021", $room4, $room1);
+$reservation2 = new Reservation($user1, "11-03-2021", "15-03-2021", $room3, $room1);
+$reservation3 = new Reservation($user1, "01-04-2021", "17-04-2021", $room4, $room1);
 
 $room3->setWifi(true);
 
