@@ -6,6 +6,7 @@ class Reservation
     private $dtStart;
     private $dtEnd;
     private $room;
+    private $hotel; // Demander comment faire sans. (discussion Balthazar)
 
     public function __construct($user, $dtStart, $dtEnd, $room)
     {
@@ -18,7 +19,7 @@ class Reservation
         $this->room = $room;
         $this->room->addReservation($this);
         $this->room->statusWifi($this);
-        $this->room->getHotel()->addReservation($this);
+        $this->room->getHotel()->addReservation($this); //
     }
 
     // ******** GETTER / SETTER *********
@@ -71,13 +72,4 @@ class Reservation
         return $this;
     }
 
-    // ***** TOSTRING *****
-
-    // public function __toString()
-    // {
-    //     return $this->user . $this->dtStart . $this->dtEnd . $this->room;
-    // }
-
-
-   
 }
