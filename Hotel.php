@@ -155,16 +155,13 @@ class Hotel
             .$room->getName() .
             "</td>
             <td>"
-            .$room->getPrice() .
+            .$room->getPrice() . " €" .
             "</td>
             <td>";
             if ($room->getWifi() == true)
             {
-                echo '<a href="img\signal-wifi.png"></a>';// https://www.flaticon.com/fr/icone-gratuite/signal-wifi_1176875?term=wifi&page=1&position=1&origin=tag&related_id=1176875
-                } else 
-                {
-                    echo "";
-                }
+                echo "Logo!" . '<a href="img\signal-wifi.png"></a>';// https://www.flaticon.com/fr/icone-gratuite/signal-wifi_1176875?term=wifi&page=1&position=1&origin=tag&related_id=1176875
+            }
                 echo "</td>
                 <td>";
                 if ($room->getDisponibility() == true)
