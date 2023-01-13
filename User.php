@@ -5,7 +5,7 @@ class User
     
     private string $name;
     private string $firstName;
-    private string$sexe;
+    private string $sexe;
     private string $dtBirth;
     private array $reservation;
     
@@ -114,7 +114,7 @@ class User
         foreach ($this->reservation as $reservation) // pour chaque reservation dans le tab reservation
         {
             // On affiche l'hotel, la chambre et le nb de lit
-            echo $reservation->getHotel() . "<br>" . $reservation->getRoom()->getName() . " ( " . $reservation->getRoom()->getNbBed() . " lit";
+            echo "<br>" . $reservation->getHotel()->getName() . " " . $reservation->getRoom()->getName() . " ( " . $reservation->getRoom()->getNbBed() . " lit";
             // Pour rajouter un S (comme dans hotel)
             if ($this->countReserved() > 1) {   
                 echo "s";
@@ -137,7 +137,7 @@ class User
             // += pour 
             $finalPrice += $dateDif->format("%d") * $reservation->getRoom()->getPrice(); // finalPrice = $dateDif(en jour) * le prix de $reservation
         }
-        echo "<br>" . "Total : " . $finalPrice;
+        echo "<br>" . "Total : " . $finalPrice . " €";
     }
     
     // ***** TOSTRING *****
