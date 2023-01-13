@@ -109,19 +109,31 @@ class User
         
         $finalPrice = 0;
         
-        foreach ($this->reservation as $reservation) 
+        foreach ($this->reservation as $reservation) // pour chaque reservation dans le tab reservation
         {
-            echo $reservation->getHotel() . "<br>" . $reservation->getRoom()->getName() . " (" . $reservation->getRoom()->getNbBed() . "lit";
+            // On affiche l'hotel, la chambre et le nb de lit
+            echo $reservation->getHotel() . "<br>" . $reservation->getRoom()->getName() . " ( " . $reservation->getRoom()->getNbBed() . " lit";
+            // Pour rajouter un S (comme dans hotel)
             if ($this->countReserved() > 1) {   
                 echo "s";
             };
+            // on affiche le prix et le wifi
             echo " - " . $reservation->getRoom()->getPrice() . " €  - Wifi : ";
+            // si le status et TRUE
             if($reservation->getRoom()->statusWifi() == true)
             echo "oui";
-            else
+            else // Sinon 
             {
                 echo "non";
             }
+            echo ") du " . $reservation->getDtStart() . " au " . $reservation->getDtend() . " Nuit : ";
+            
+            $date1 = date_create($reservation->getDtStart());
+            $date2 = date_create($reservation->getDtend());
+            $dateDif = date_diff($date1 ,$date2);
+            $finalPrice += $dateDif->format("%d") * $reservation->getRoom()->getPrice();
+            
+            echo $dateDif->format("%d"). "</p>";
         }
         
     }
