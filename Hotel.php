@@ -133,11 +133,7 @@ class Hotel
             echo"Aucune réservation";
         }
     }
-    
-    public function roomsResumed()
-    {
-        
-    }
+
     
     
     
