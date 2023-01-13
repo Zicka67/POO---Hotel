@@ -6,14 +6,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="" href="style.css";>
+<link rel="" href="style.css">
 
 <title>POO HOTEL</title>
 
 </head>
 
 <body>
-<div>
+
+<div class="container">
+
+<h1>fzzezfq</h1>
 
 <?php
 
