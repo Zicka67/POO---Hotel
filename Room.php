@@ -7,8 +7,8 @@ class Room
     private int $price;
     private int $nbBed;
     private $hotel;
-    private $wifi; 
-    private $disponibility; 
+    private bool $wifi; 
+    private bool $disponibility; 
     private array $reservation;
     
     public function __construct($name, $price, $nbBed, $hotel)
@@ -18,9 +18,9 @@ class Room
         $this->nbBed = $nbBed;
         
         $this->hotel = $hotel;
-        $this->hotel->addRoom($this); // A ne plus oublier ! (plus d'infos pour mieux comprendre)
+        $this->hotel->addRoom($this); 
         
-        $this->disponibility =true;
+        $this->disponibility = true;
         $this->reservation = [];
         $this->wifi = false;
     }
@@ -106,9 +106,9 @@ class Room
         $this->reservation[] = $reservation;
     }
     
-    // ***** WIFISTATUS *****
+    // ***** DISPONIBILITYETAT *****
     
-    public function statusWifi()
+    public function disponibilityEtat()
     {
         if($this->disponibility == true)
         $this->disponibility = false;
