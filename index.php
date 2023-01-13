@@ -28,18 +28,21 @@ $room18 = new Room("Chambre 18", 300, 2, $hotel1);
 $room19 = new Room("Chambre 19", 300, 2, $hotel1);
 
 
-$reservation1 = new Reservation($user2, "01-01-2021", "01-01-2021", $room17, $hotel2);
-$reservation2 = new Reservation($user1, "11-03-2021", "11-03-2021", $room3, $hotel1);
-$reservation3 = new Reservation($user1, "01-04-2021", "01-04-2021", $room4, $hotel1);
+$reservation1 = new Reservation($user2, "01-01-2021", "01-01-2021", $room17);
+$reservation2 = new Reservation($user1, "11-03-2021", "11-03-2021", $room3);
+$reservation3 = new Reservation($user1, "01-04-2021", "01-04-2021", $room4);
 
 $room3->setWifi(true);
 
 // var_dump($room3);
 $hotel1->getHotelInfos();
+// $hotel2->getHotelInfos();
 echo "<br><br>";
-$hotel2->getHotelInfos();
-
-// $hotel1->getHotelReservation();
+$hotel1->getHotelReservation();
+echo "<br><br>";
+$hotel2->getHotelReservation();
+echo "<br><br>";
+// $hotel1->roomResumed();
 
 
 
