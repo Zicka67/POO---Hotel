@@ -19,7 +19,9 @@ class Reservation
         $this->room = $room;
         $this->room->addReservation($this);
         $this->room->statusWifi($this);
-        $this->room->getHotel()->addReservation($this); //
+        $this->room->getHotel()->addReservation($this); // On appel getHotel() de l'objet $this->room, et donc renvoie l'objet hotel à la room actuel.
+        // on appel addReservation() sur l'objet getHotel avec comme argument $this(qui est l'objet de réservation actuel)
+        //Cela ajoute l'objet de réservation actuel ($this) au tab de reservation de l'hotel.
     }
 
     // ******** GETTER / SETTER *********
