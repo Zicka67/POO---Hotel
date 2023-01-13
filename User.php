@@ -98,6 +98,8 @@ class User
         $this->reservation [] = $reservation;
     }
     
+    // ***** GETUSERRESERVATION *****
+    
     public function getUserReservation()
     {
         echo "Réservation de l'utilisateur " . $this->getFirstName() . " " . $this->getName() . "<br>" .
@@ -126,33 +128,17 @@ class User
             {
                 echo "non";
             }
-            echo ") du " . $reservation->getDtStart() . " au " . $reservation->getDtend() . " Nuit : ";
-            
+            echo ") du " . $reservation->getDtStart() . " au " . $reservation->getDtend();
+            //PHP 2 - exo 15 date_creation + dateDif
             $date1 = date_create($reservation->getDtStart());
-            $date2 = date_create($reservation->getDtend());
+            $date2 = date_create($reservation->getDtEnd());
             $dateDif = date_diff($date1 ,$date2);
-            var_dump($dateDif);
-            $finalPrice = $dateDif->format("%d") * $reservation->getRoom()->getPrice(); // finalPrice = $dateDif(en jour) * le prix de $reservation
-            
-            echo $dateDif->format("%d");
+            // var_dump($dateDif);
+            // += pour 
+            $finalPrice += $dateDif->format("%d") * $reservation->getRoom()->getPrice(); // finalPrice = $dateDif(en jour) * le prix de $reservation
         }
-        echo "Total : " . $finalPrice;
+        echo "<br>" . "Total : " . $finalPrice;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     // ***** TOSTRING *****
     
