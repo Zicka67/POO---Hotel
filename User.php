@@ -131,11 +131,12 @@ class User
             $date1 = date_create($reservation->getDtStart());
             $date2 = date_create($reservation->getDtend());
             $dateDif = date_diff($date1 ,$date2);
-            $finalPrice += $dateDif->format("%d") * $reservation->getRoom()->getPrice();
+            var_dump($dateDif);
+            $finalPrice = $dateDif->format("%d") * $reservation->getRoom()->getPrice(); // finalPrice = $dateDif(en jour) * le prix de $reservation
             
-            echo $dateDif->format("%d"). "</p>";
+            echo $dateDif->format("%d");
         }
-        
+        echo "Total : " . $finalPrice;
     }
     
     
