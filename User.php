@@ -122,7 +122,7 @@ class User
             // on affiche le prix et le wifi
             echo " - " . $reservation->getRoom()->getPrice() . " €  - Wifi : ";
             // si le status et TRUE
-            if($reservation->getRoom()->statusWifi() == true)
+            if($reservation->getRoom()->disponibilityEtat() == true)
             echo "oui";
             else // Sinon 
             {
