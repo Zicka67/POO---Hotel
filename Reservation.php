@@ -15,6 +15,7 @@ class Reservation
         
         $this->hotel = $hotel;
         $this->hotel->addReservation($this);
+        // $this->hotel = $this->room->getHotel();
         
         $this->user = $user;
         $this->user->addReservation($this);
@@ -22,6 +23,7 @@ class Reservation
         $this->room = $room;
         $this->room->addReservation($this);
         $this->room->disponibilityEtat($this);
+        
     }
     
     // ******** GETTER / SETTER *********
@@ -78,7 +80,7 @@ class Reservation
     {
         return $this->hotel;
     }
-
+    
     public function setHotel($hotel): self
     {
         $this->hotel = $hotel;
