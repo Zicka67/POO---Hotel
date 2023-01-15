@@ -147,13 +147,13 @@ class Hotel
                 }
             }
         } else {
-            echo"Aucune réservation" ;
+            echo "<h2>" . "Aucune réservation" . "</h2>" ;
         }
     }
     
     public function tabResumedRooms()
     {
-        echo "<h2>Status des chambres de " . $this->getName() . "</h2>" .
+        echo "<h1>Status des chambres de " . $this->getName() . "</h1>" .
         "<table>
         <thead>
         <tr>
@@ -183,11 +183,11 @@ class Hotel
                 {
                     
                     // echo var_dump($room->getDisponibility()); // test de getDisponibility
-                    echo '<p>Disponible</p>';
+                    echo '<p class=green2>Disponible</p>';
                 } else 
                 {
                     
-                    echo '<p>Réservée</p>';
+                    echo '<p class=red>Réservée</p>';
                 }
                 echo "</td>
                 </tr>";
