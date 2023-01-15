@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="" href="style.css">
+<link rel="stylesheet" href="styles.css">
 
 <title>POO HOTEL</title>
 
@@ -16,8 +16,6 @@
 
 <div class="container">
 
-<h1>fzzezfq</h1>
-
 <?php
 
 spl_autoload_register(function ($class_name) {
@@ -25,8 +23,8 @@ spl_autoload_register(function ($class_name) {
     require_once $class_name . '.php';
 });
 
-$hotel1 = new Hotel("HILTON **** Strasbourg", "10 route de la Gare 67000 STRASBOURG");
-$hotel2 = new Hotel("REGENT **** Paris", "61 Rue Dauphine, 75006 Paris");
+$hotel1 = new Hotel("Hilton **** Strasbourg", "10 route de la Gare 67000 STRASBOURG");
+$hotel2 = new Hotel("Regent **** Paris", "61 Rue Dauphine, 75006 Paris");
 
 $user1 = new User("Murmann", "Micka", "Homme", "01-01-1988");
 $user2 = new User("Gibello", "Virgile", "Homme", "02-02-1994");
