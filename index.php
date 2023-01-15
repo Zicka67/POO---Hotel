@@ -57,7 +57,7 @@ echo "<br><br>";
 $hotel2->getHotelReservation();
 echo "<br><br>";
 $user1->getUserReservation();
-
+echo "<br><br>";
 $hotel1->tabResumedRooms(); // Seulement le user2 peut reserver des chambres, ne fonctionne pas avec le user1. Donc uniquement la 17 est affiché en reservée
 
 ?>
