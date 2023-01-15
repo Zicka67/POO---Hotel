@@ -153,29 +153,35 @@ class Hotel
     
     public function tabResumedRooms()
     {
+        $grey = array("Chambre 1", "Chambre 3", "Chambre 16", "Chambre 18");
+
         echo "<h1>Status des chambres de " . $this->getName() . "</h1>" .
         "<table>
         <thead>
         <tr>
-        <th>CHAMBRE</th>
-        <th>PRIX</th>
-        <th>WIFI</th>
-        <th>ETAT</th>
+        <th class=padding1>CHAMBRE</th>
+        <th class=padding2>PRIX</th>
+        <th class=padding3>WIFI</th>
+        <th class=padding4>ETAT</th>
         </tr>
         </thead><tbody>";
         foreach($this->room as $room)
         {
-            echo "<tr>
-            <td>"
+            if(in_array($room->getName(), $grey)){
+                echo "<tr class='grey'>";
+            }else{
+                 echo "<tr>";
+            }
+            echo "<td>"
             .$room->getName() .
             "</td>
-            <td>"
+            <td class=price>"
             .$room->getPrice() . " €" .
             "</td>
-            <td>";
+            <td class=img>";
             if ($room->getWifi() == true)
             {
-                echo "Logo!" . '<a href="img\signal-wifi.png"></a>';// https://www.flaticon.com/fr/icone-gratuite/signal-wifi_1176875?term=wifi&page=1&position=1&origin=tag&related_id=1176875
+                echo '<a class=img href="img\signal-wifi.png" target=_blank>Logo!</a>';// https://www.flaticon.com/fr/icone-gratuite/signal-wifi_1176875?term=wifi&page=1&position=1&origin=tag&related_id=1176875
                 }
                 echo "</td>
                 <td>";
