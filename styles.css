@@ -1,0 +1,31 @@
+h1 {
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: normal;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 12px;
+}
+
+h2 {
+    color: rgb(114, 109, 109);
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 12px;
+}
+
+
+
+.green {
+    color: white;
+    background-color: rgb(21, 208, 142);
+    height: 18px;
+    width: 170px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 6px;
+    margin: -5px 0 -10px;
+}
+
