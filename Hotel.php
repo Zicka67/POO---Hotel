@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="styles.css">
+
+<title>Document</title>
+
+</head>
+<body>
+
 <?php
 
 class Hotel
@@ -106,33 +121,33 @@ class Hotel
     {
         $roomDispo = $this->countRooms() - $this->countReserveRooms();
         
-        echo $this->getName() . "<br>" .
-        $this->getAdress() . "<br>" .
-        "Nombre de chambres : " . $this->countRooms() . "<br>" .
-        "Nombre de chambres réservées : " . $this->countReserveRooms() . "<br>" .
-        "Nombre de chambres dispo : " . $roomDispo;
+        echo "<h1>" . $this->getName() . "</h1>" . "<br>" .
+        "<h2>" . $this->getAdress() . "</h2>" . "<br>" .
+        "<h2>" . "Nombre de chambres : " . $this->countRooms() . "</h2>" . "<br>" .
+        "<h2>" . "Nombre de chambres réservées : " . $this->countReserveRooms() . "</h2>" . "<br>" .
+        "<h2>" . "Nombre de chambres dispo : " . $roomDispo . "</h2>";
     }
     
     // ***** GETHOTELRESERVATION *****
     
     public function getHotelReservation()
     {
-        echo "Réservations de l'hôtel " . $this->getName() . "<br>";
+        echo "<h1>" . "Réservations de l'hôtel " . $this->getName() . "</h1>" . "<br>";
         if ($this->countReserveRooms() > 1) {
-            echo $this->countReserveRooms() . " RÉSERVATION";
+            echo "<h2 class=green>" . $this->countReserveRooms() . " RÉSERVATION"  ;
             // rajouter un S au pluriel
-            if ($this->countReserveRooms() > 1) {   
-                echo "S";
+            if ($this->countReserveRooms() > 1) {  
+                echo "S" . "</h2>";
             };
             foreach ($this->reservations as $reservation) {
                 // echo "fzfz";
                 // var_dump($reservation);
-                echo "<br>" . $reservation->getUser()->getName() . " " . $reservation->getUser()->getfirstName()  . " " . $reservation->getRoom()->getName() . " - du " . $reservation->getDtStart() . " au " . $reservation->getDtEnd();
+                echo "<br>" . "<h2 class=h2bis>" . $reservation->getUser()->getName() . " " . $reservation->getUser()->getfirstName()  . " " . $reservation->getRoom()->getName() . " - du " . $reservation->getDtStart() . " au " . $reservation->getDtEnd() . "</h2>";
                 if ($reservation->getRoom()->getDisponibility() == false) {
                 }
             }
         } else {
-            echo"Aucune réservation";
+            echo"Aucune réservation" ;
         }
     }
     
@@ -161,14 +176,17 @@ class Hotel
             if ($room->getWifi() == true)
             {
                 echo "Logo!" . '<a href="img\signal-wifi.png"></a>';// https://www.flaticon.com/fr/icone-gratuite/signal-wifi_1176875?term=wifi&page=1&position=1&origin=tag&related_id=1176875
-            }
+                }
                 echo "</td>
                 <td>";
                 if ($room->getDisponibility() == true)
                 {
+                    
+                    // echo var_dump($room->getDisponibility()); // test de getDisponibility
                     echo '<p>Disponible</p>';
                 } else 
                 {
+                    
                     echo '<p>Réservée</p>';
                 }
                 echo "</td>
@@ -185,3 +203,8 @@ class Hotel
         }
         
     }
+    
+    ?>
+    </body>
+    </html>
+    
