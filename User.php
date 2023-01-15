@@ -80,6 +80,13 @@ class User
         return $this;
     }
     
+    // ***** ADDRESERVATION *****
+    
+    public function addReservation($reservation)
+    {
+        $this->reservation [] = $reservation;
+    }
+    
     // ***** COUNTRESERVED *****
     
     public function countReserved()
@@ -91,22 +98,15 @@ class User
         return $i;
     }
     
-    // ***** ADDRESERVATION *****
-    
-    public function addReservation($reservation)
-    {
-        $this->reservation [] = $reservation;
-    }
-    
     // ***** GETUSERRESERVATION *****
     
     public function getUserReservation()
     {
-        echo "Réservation de l'utilisateur " . $this->getFirstName() . " " . $this->getName() . "<br>" .
-        $this->countReserved() . "RESERVATION";
+        echo "<h1>" . "Réservation de l'utilisateur " . $this->getFirstName() . " " . $this->getName() . "</h1>" . "<br>" .
+        "<h2 class=green>" . $this->countReserved() . " RESERVATION";
         // Pour afficher un S si countReserved() > 1
         if ($this->countReserved() > 1) {   
-            echo "S";
+            echo "S" . "</h2>";
         };
         
         $finalPrice = 0;
@@ -114,7 +114,7 @@ class User
         foreach ($this->reservation as $reservation) // pour chaque reservation dans le tab reservation
         {
             // On affiche l'hotel, la chambre et le nb de lit
-            echo "<br>" . $reservation->getHotel()->getName() . " " . $reservation->getRoom()->getName() . " ( " . $reservation->getRoom()->getNbBed() . " lit";
+            echo "<h2 class=h2modif>" . "<br>" . $reservation->getHotel()->getName() . " " . $reservation->getRoom()->getName() . " ( " . $reservation->getRoom()->getNbBed() . " lit";
             // Pour rajouter un S (comme dans hotel)
             if ($this->countReserved() > 1) {   
                 echo "s";
@@ -128,7 +128,7 @@ class User
             {
                 echo "non";
             }
-            echo ") du " . $reservation->getDtStart() . " au " . $reservation->getDtend();
+            echo ") du " . $reservation->getDtStart() . " au " . $reservation->getDtend()  . "</h2>";
             //PHP 2 - exo 15 date_creation + dateDif
             $date1 = date_create($reservation->getDtStart());
             $date2 = date_create($reservation->getDtEnd());
@@ -137,7 +137,7 @@ class User
             // += pour 
             $finalPrice += $dateDif->format("%d") * $reservation->getRoom()->getPrice(); // finalPrice = $dateDif(en jour) * le prix de $reservation
         }
-        echo "<br>" . "Total : " . $finalPrice . " €";
+        echo "<br>" . "<h2>" . "Total : " . $finalPrice . " €" . "</h2>";
     }
     
     // ***** TOSTRING *****
