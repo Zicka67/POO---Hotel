@@ -24,16 +24,32 @@ table {
 
 table th {
     color: rgb(114, 109, 109);
-    padding-right: 80px;
+    padding-right: 40px; /* A enlever si on rajoute display */
     padding-bottom: 20px;
     font-family: Arial, Helvetica, sans-serif;
+    /* display: inline-block; */
+    /* width: 100px; */
 }
 
 table td {
-    border-top: solid 1px black;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.padding2 {
+    padding-left: 45px;
+}
+
+.padding3 {
+    padding-left: 45px;
+}
+
+.padding4 {
+    padding-left: 25px;
+}
+
+.price {
+    text-align: center;
+}
 
 
 table th:first-child  {
@@ -77,5 +93,26 @@ table th:first-child  {
     text-align: center;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.grey {
+    background-color: rgb(209, 203, 203);
+}
+
+.a {
+    width: 20px;
+    height: 20px;
+}
+
+a .img  {
+    width: 10px;
+    height: auto;
+    background-image: url('img/signal-wifi.png');
+    background-repeat: no-repeat;
+    padding-left: 10px;
+}
+
+td a {
+    margin-left: 40px;
 }
 
