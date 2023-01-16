@@ -21,8 +21,9 @@ class Reservation
         $this->user->addReservation($this);
         
         $this->room = $room;
+        $this->room->setDisponibility(false);
+        $this->room->disponibilityEtat();
         $this->room->addReservation($this);
-        $this->room->disponibilityEtat($this);
         
     }
     
