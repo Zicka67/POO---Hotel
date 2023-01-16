@@ -31,6 +31,15 @@ table th {
     /* width: 100px; */
 }
 
+.fa-solid {
+    text-align: center;
+
+}
+
+.priceMargin {
+    margin-bottom: 40px;
+}
+
 table td {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -49,6 +58,7 @@ table td {
 
 .price {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 
@@ -96,7 +106,7 @@ table th:first-child  {
 }
 
 .grey {
-    background-color: rgb(228, 220, 220);
+    background-color: rgba(228, 228, 228, 0.993);
 }
 
 .a {
@@ -114,5 +124,10 @@ a .img  {
 
 td a {
     margin-left: 40px;
+}
+
+.container {
+    margin: 20% auto;
+    width: 70%;
 }
 

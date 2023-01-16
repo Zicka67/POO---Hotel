@@ -102,7 +102,7 @@ class User
     
     public function getUserReservation()
     {
-        echo "<h1>" . "Réservation de l'utilisateur " . $this->getFirstName() . " " . $this->getName() . "</h1>" . "<br>" .
+        echo "<h1><u>" . "Réservation de l'utilisateur " . $this->getFirstName() . " " . $this->getName() . "</u></h1>" . "<br>" .
         "<h2 class=green>" . $this->countReserved() . " RESERVATION";
         // Pour afficher un S si countReserved() > 1
         if ($this->countReserved() > 1) {   
@@ -137,7 +137,7 @@ class User
             // += pour 
             $finalPrice += $dateDif->format("%d") * $reservation->getRoom()->getPrice(); // finalPrice = $dateDif(en jour) * le prix de $reservation
         }
-        echo "<br>" . "<h2>" . "Total : " . $finalPrice . " €" . "</h2>";
+        echo "<br>" . "<h2 class=priceMargin>" . "Total : " . $finalPrice . " €" . "</h2>";
     }
     
     // ***** TOSTRING *****
