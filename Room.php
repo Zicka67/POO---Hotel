@@ -111,9 +111,9 @@ class Room
     public function disponibilityEtat()
     {
         if($this->disponibility == true)
-        $this->disponibility = false;
+            $this->disponibility = false;
         else {
-            $this->disponibility = true;
+            $this->disponibility == true;
         }
     }
     
